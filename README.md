@@ -1,68 +1,90 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 생활코딩 ReactJS
 
-## Available Scripts
+Last Edited: Aug 18, 2019 9:53 PM
 
-In the project directory, you can run:
+# 1. 수업소개
 
-### `npm start`
+## React
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- 페이스북에서 개발한 Javascript UI 라이브러리
+- Component ⇒ 일종의 사용자 정의 함수
+- 장점
+    1. 가독성
+    2. 재사용성
+    3. 유지보수
 
-### `npm test`
+# 2. 개발 환경
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 개발 환경의 종류
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 어떻게하면 빠르게 성장하고, 강사로 부터 독립할 수 있을까를 생각
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+    ⇒ 공식 문서에 익숙해지는 것!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## create-react-app
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Toolchains
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### npm을 이용한 설치
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    $ sudo npm i -g create-react-app@2.1.8 // 설치
+    create-react-app // 설치 확인
+    create-react-app . // .은 경로 자기 자신을 의미
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- 컴퓨터에 직접 설치하는 방법
+- `sudo` : 명령어를 관리자 권한으로 실행
+- `-g` : global의 약자로 해당 app을 시스템 전역에 설치
+- `@2.1.8` : 뒤에 버전을 붙이면 해당 버전을 다운로드. 붙이지 않으면 최신 버전을 다운로드 한다.
 
-## Learn More
+### npx를 이용한 설치
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    $ npx create-react-app my-repo
+    $ cd my-repo
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 실무에선 npx 사용 권장
+- 설치해서 현재 프로젝트에 사용하고 사용이 끝나면 자동 삭제
 
-### Code Splitting
+## 배포하는 법
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+---
 
-### Analyzing the Bundle Size
+### build 폴더 생성
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+    $ npm run build
 
-### Making a Progressive Web App
+### 배포
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+    $ npx serve -s build
 
-### Advanced Configuration
+- 개발자 도구 네트워크 탭을 살펴보면 작업 시 사용한 서버와 실제 배포 서버에서 다운 받는 App의 크기가 다른 것을 확인할 수 있다. (배포 버전이 훨씬 경량)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+# 3. 컴포넌트 제작
 
-### Deployment
+## 리액트가 없다면
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+---
 
-### `npm run build` fails to minify
+- 기술은 절망감을 재물로 삼는다.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## 컴포넌트 만들기
+
+---
+
+- 컴포넌트를 만들 때는 반드시 하나의 최상위 태그로 시작해야 한다.
+- 하단의 코드는 자바스크립트와 유사하지만 자바스크립트가 아닌 JSX이다.
+
+    class App extends React.Component { // 컴포넌트 이름은 대문자로 시작해야 함
+      render() {
+        return (
+          <div className="App"> // 최상위 태그
+            Hell, react!
+          </div>
+        );
+      }
+    }
