@@ -5,8 +5,8 @@ class Subject extends React.Component {
   render() {
     return (
       <header>
-        <h1>Web</h1>
-        <p>World Wide Web!</p>
+        <h1>{this.props.title}</h1>
+        <p>{this.props.sub}</p>
       </header>
     );
   }
@@ -41,7 +41,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Subject />
+        <Subject title="Web" sub="World Wide Web!" />
+        <Subject title="React" sub="For UI" />
         <TOC />
         <Content />
       </div>

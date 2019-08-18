@@ -66,13 +66,14 @@ Last Edited: Aug 18, 2019 9:53 PM
 
 - 컴포넌트를 만들 때는 반드시 하나의 최상위 태그로 시작해야 한다.
 - 하단의 코드는 자바스크립트와 유사하지만 자바스크립트가 아닌 JSX이다.
-
-    class App extends React.Component { // 컴포넌트 이름은 대문자로 시작해야 함
-      render() {
-        return (
-          <div className="App"> // 최상위 태그
-            Hell, react!
-          </div>
-        );
-      }
+```javascript
+class App extends React.Component { // 컴포넌트 이름은 대문자로 시작해야 함
+    render() {
+    return (
+        <div className="App"> // 최상위 태그
+        Hello, react!
+        </div>
+    );
     }
+}
+```
