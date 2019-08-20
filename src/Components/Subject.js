@@ -9,6 +9,6 @@ class Subject extends React.Component {
         </header>
       );
     }
-  }
+}
 
 export default Subject;
