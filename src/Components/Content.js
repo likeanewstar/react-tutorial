@@ -4,8 +4,8 @@ class Content extends React.Component {
     render() {
       return (
         <article>
-          <h2>HTML</h2>
-          <p>HTML is Hypertext Markup Language.</p>
+          <h2>{this.props.title}</h2>
+          <p>{this.props.desc}</p>
         </article>
       );
     }
