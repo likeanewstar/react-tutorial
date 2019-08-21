@@ -1,5 +1,5 @@
 import React from 'react';
-import Subject from './Components/Subject';
+//import Subject from './Components/Subject';
 import TOC from './Components/TOC';
 import Content from './Components/Content';
 import './App.css';
@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        mode: 'welcome',
+        mode: 'read',
         subject: {
             title: 'WEB',
             sub: 'World Wide Web!'
@@ -35,7 +35,17 @@ class App extends React.Component {
     }
     return (
       <div className="App">
-        <Subject title={this.state.subject.title} sub={this.state.subject.sub} />
+        {/* <Subject title={this.state.subject.title} sub={this.state.subject.sub} /> */}
+        <header>
+          <h1><a href="#a" onClick={ (e) => {
+            e.preventDefault();
+            //this.state.mode = 'welcome';
+            this.setState({
+              mode: 'welcome'
+            })
+          }}>{this.state.subject.title}</a></h1>
+          <p>{this.state.subject.sub}</p>
+        </header>
         <TOC data={this.state.contents} />
         <Content title={_title} desc={_desc} />
       </div>
